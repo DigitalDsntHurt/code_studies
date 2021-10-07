@@ -1,0 +1,1 @@
+ alias study="cd ~/Desktop/code_studies && mkdir $(date +%-d-%-m-%y) && cp RE    ADME_TEMPLATE.md $(date +%-d-%-m-%y)/README.md && cd $(date +%-d-%-m-%y)"
