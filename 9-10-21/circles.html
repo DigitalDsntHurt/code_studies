@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Circles Practice</title>
+  </head>
+  <style>
+    #circle{
+      height: 222px;
+      width: 222px;
+      border-radius: 50%;
+      border: solid 1px coral;
+    }
+    .circle-demo{
+      height: 88px;
+      width: 88px;
+      border-radius: 50%;
+    }
+  </style>
+  <body>
+    <h1>Draw a circle</h1>
+    <div id='circle'></div>
+    <h1>Experiment with `border` property</h1>
+    <h2>use only `border: solid`</h2>
+    <div id='circle' style="border: solid;"></div>
+    <h2>use only `border: 1px`</h2>
+    <div id='circle' style="border: 1px;"></div>
+    <h2>use only `border: black`</h2>
+    <div id='circle' style="border: black;"></div>
+    <h2>okay, so if we want to see something, `border: ` definitely needs at least a `solid` argument</h2>
+    <p>It turns out that `border` is actually shorthand for three different css properties:</p>
+    <ul><li>border-style</li><li>border-width</li><li>border-color</li></ul>
+    <p>Here are a few different <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/border-style'>values we can provide to border-style</a> : </p>
+
+
+    <table>
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      solid
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: solid;"></div>
+                    </td>
+                  </tr>
+                  </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      dotted
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: dotted;"></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      dashed
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: dashed;"></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      groove
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: groove;"></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <td>
+          <table>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      double
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: double;"></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      ridge
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: ridge;"></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      inset
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: inset;"></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      outset
+                    </td>
+                    <td>
+                      <div class="circle-demo" style="border-style: outset;"></div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+      </tr>
+    </table>
+
+  </body>
+</html>
