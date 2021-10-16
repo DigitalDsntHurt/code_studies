@@ -1,12 +1,15 @@
 def my_method(number)
-  yield number
+  # yield(number)
+  # yield number
+  # these two above are equivalent, which means yield is a method
+  yield(number)
 end
 
 my_method(88) { |num| puts "i LOVE #{num}"} # i LOVE 88
 
 my_method(88) { |num| puts num - 30 * 3 } # 150
 # the above is a problem. i expect to get 150 but instead i get -2
-# my_method(88) { |num| puts (num - 30) * 3 } # 150
+my_method(88) { |num| puts (num - 38) * 3 } # 150
 # the above throws an undefined local variable or method `num' for main:Object nameError
 # okay, so it turns out i don't understand ruby block scoped variables
 # let's make a note to come back to this and continue
@@ -39,14 +42,12 @@ meth_with_args('foo', 'baz'){ |thing| p thing }
 
 def meth_with_args(arg1, arg2)
   both = [arg1, arg2]
-  yield (arg1, arg2, both)
+  yield(arg1, arg2, both)
   # yield arg2
   # yield both
 end
 
 meth_with_args('foo', 'baz'){ |thing1, thing2, thing3| puts "#{thing1}, #{thing2}, #{thing3}" }
-#=> foo
-#=> baz
-#=> ['foo', 'baz']
+#=> foo, baz, ['foo', 'baz']
 
 # return values
