@@ -1,2 +1,1 @@
 alias study="cd ~/Desktop/code_studies && mkdir $(date +%-d-%-m-%y) && cp README_TEMPLATE.md $(date +%-d-%-m-%y)/README.md && cd $(date +%-d-%-m-%y)"
-alias mf="cd ~/Desktop/code_studies && touch $(date +%-d-%-m-%y)/"$1""
