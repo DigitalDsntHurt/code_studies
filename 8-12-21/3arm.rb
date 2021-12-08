@@ -71,14 +71,17 @@ steps to reproduce
 
 =end
 
-CONTROL = 45
-VARIATION = 45
-RANDOM_VARIATION = 10
+puts "Enter control percentage..."
+control = gets.chomp
+puts "Enter variation percentage..."
+variation = gets.chomp
+puts "Enter random variation percentage..."
+random_variation = gets.chomp
 
 $experiment_arms = {
-  control: CONTROL.to_f,
-  variation: VARIATION.to_f,
-  random_variation: RANDOM_VARIATION.to_f,
+  control: control.to_f,
+  variation: variation.to_f,
+  random_variation: random_variation.to_f,
 }
 
 def sums_to_100?
@@ -97,8 +100,13 @@ def generate_experiment_splits
     ov = 100 - oc
     ic = $experiment_arms[:variation] / ov * 100
     iv = 100 - ic
+    puts ""
     puts "Experiment arms sum to 100. Let's go..."
-    puts "\t CONTROL          : #{oc.round}%"
+    puts "\nOuter Experiment Splits : "
+    puts "\t CONTROL            : #{oc.round}%"
+    puts "\t VARIATION          : #{ov.round}%"
+
+    puts "\nInner Experiment Splits : "
     puts "\t VARIATION        : #{ic.round}%"
     puts "\t RANDOM VARIATION : #{iv.round}%"
     return
