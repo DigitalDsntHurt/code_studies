@@ -8,6 +8,4 @@
 
 ## Timebox
 
-***
-
 ## Reflection
