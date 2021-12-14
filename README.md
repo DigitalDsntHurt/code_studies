@@ -1,5 +1,15 @@
-# Code Studies
+# Code Study - /date
 
-My home for software engineering deliberate practice.
+## Tool
+ruby
 
-Code Studies concept from Noah Gibbs' (wonderful) [Mastering Software Technique](https://software-technique.com/)
+## Task
+write a script that tells you when 13 is giving 17 a hug
+
+## Purpose
+play with code
+
+## Timebox
+10 mins
+
+## Reflection
