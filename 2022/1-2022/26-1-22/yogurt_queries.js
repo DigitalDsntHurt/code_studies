@@ -1,4 +1,6 @@
-const logs = require('/Users/nick.smith/jot/2022/yoga_practice_journal_2022.json');
+// const logs = require('/Users/nick.smith/jot/2022/yoga_practice_journal_2022.json');
+const logs = require('/Users/nick.smith/jot/yogurt/yoga_practice_journal_2022.json');
+
 // console.log(logs);
 
 // unique bam classes
