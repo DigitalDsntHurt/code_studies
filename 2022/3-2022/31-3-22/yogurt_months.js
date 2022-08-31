@@ -1,10 +1,23 @@
-const jsonData = require('/Users/nick.smith/jot/yogurt/yoga_practice_journal_2022.json');
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const jsonData = require("/Users/nick.smith/jot/yogurt/yoga_practice_journal_2022.json");
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 // HELPERS __ start
-const round = num => (Math.round(num * 100) / 100)
+const round = (num) => Math.round(num * 100) / 100;
 
-const minsToHours = mins => (mins / 60);
+const minsToHours = (mins) => mins / 60;
 
 const getDaysInMonthCount = (month, year) => {
   return new Date(year, month, 0).getDate();
@@ -15,7 +28,7 @@ const getNextDate = (startDate) => {
 };
 //HELPERS __ end
 
-const yearStart = new Date('1/1/2022');
+const yearStart = new Date("1/1/2022");
 const today = new Date(Date.now());
 const thisYear = yearStart.getFullYear();
 const tomorrow = getNextDate(today);
@@ -37,7 +50,7 @@ let thisMonth = {
   freeFlowMins: 0,
   freeFlowSessions: 0,
   freeFlowMinsPerSessionAvg: 0,
-}
+};
 // while (currentDate < tomorrow) {
 // print month
 // currentMonthNum = currentDate.getMonth();
@@ -68,27 +81,31 @@ let thisMonth = {
 // currentDate = getNextDate(currentDate);
 // }
 
-const getPracticeDaysCount = practices => {
-  const practiceDates = practices.filter(entry => (entry.mins > 0)).map(entry => (entry.date));
+const getPracticeDaysCount = (practices) => {
+  const practiceDates = practices
+    .filter((entry) => entry.mins > 0)
+    .map((entry) => entry.date);
   let uniqueDates = [];
-  practiceDates.forEach(date => {
+  practiceDates.forEach((date) => {
     if (!uniqueDates.includes(date)) {
-      uniqueDates.push(date)
+      uniqueDates.push(date);
     }
   });
-  return uniqueDates.length
+  return uniqueDates.length;
 };
 
-const getPracticesByMonthNum = monthNum => {
+const getPracticesByMonthNum = (monthNum) => {
   const monthName = months[monthNum];
-  return jsonData.filter(entry => (entry.date.includes(monthName) && entry.mins > 0));
+  return jsonData.filter(
+    (entry) => entry.date.includes(monthName) && entry.mins > 0
+  );
 };
 
-const countPractices = practices => {
+const countPractices = (practices) => {
   return practices.length;
 };
 
-const countPracticeMins = practices => {
+const countPracticeMins = (practices) => {
   return practices.reduce((sum, entry) => sum + entry.mins, 0);
 };
 
@@ -104,31 +121,52 @@ months.forEach((month, monthIdx) => {
   const practiceMins = countPracticeMins(monthPractices);
   const practiceHrs = round(minsToHours(countPracticeMins(monthPractices)));
   // free flows
-  const freeFlowPractices = monthPractices.filter(entry => (entry.detail.includes('free flow')));
+  const freeFlowPractices = monthPractices.filter((entry) =>
+    entry.detail.includes("free flow")
+  );
   const freeFlowPracticesCount = countPractices(freeFlowPractices);
   const freeFlowPracticeMins = countPracticeMins(freeFlowPractices);
   const freeFlowPracticeHours = round(minsToHours(freeFlowPracticeMins));
   // online classes
-  const onlineClassPractices = monthPractices.filter(entry => (entry.detail.includes('http')));
+  const onlineClassPractices = monthPractices.filter((entry) =>
+    entry.detail.includes("http")
+  );
   const onlineClassPracticesCount = countPractices(onlineClassPractices);
   const onlineClassPracticeMins = countPracticeMins(onlineClassPractices);
   const onlineClassPracticeHours = round(minsToHours(onlineClassPracticeMins));
 
   if (monthPractices.length > 0) {
     console.log();
-    console.log('====', month, '====');
+    console.log("====", month, "====");
     // console.log(`${practiceDays} practice days (=${round(practiceDays / daysInMonth * 100)}% of ${daysInMonth} days in ${month})`);
-    console.log(practiceDays, 'practice days (=', round(practiceDays / daysInMonth * 100), '% of', daysInMonth, 'days in', month, ')');
-    console.log(practiceMins, 'practice mins (=', practiceHrs, 'hrs)');
-    console.log(practiceSessions, 'practice sessions');
-    console.log(round(practiceMins / practiceDays), 'avg mins per day');
-    console.log(round(practiceMins / practiceSessions), 'avg mins per session');
+    console.log(
+      practiceDays,
+      "practice days (=",
+      round((practiceDays / daysInMonth) * 100),
+      "% of",
+      daysInMonth,
+      "days in",
+      month,
+      ")"
+    );
+    console.log(practiceMins, "practice mins (=", practiceHrs, "hrs)");
+    console.log(practiceSessions, "practice sessions");
+    console.log(round(practiceMins / practiceDays), "avg mins per day");
+    console.log(round(practiceMins / practiceSessions), "avg mins per session");
 
     // free flows
     console.log();
-    console.log(freeFlowPracticesCount, 'free flow practices');
-    console.log(freeFlowPracticeMins, 'free flow practice mins (=', freeFlowPracticeHours, 'hrs)');
-    console.log(round(freeFlowPracticeMins / freeFlowPracticesCount), 'avg mins per free flow');
+    console.log(freeFlowPracticesCount, "free flow practices");
+    console.log(
+      freeFlowPracticeMins,
+      "free flow practice mins (=",
+      freeFlowPracticeHours,
+      "hrs)"
+    );
+    console.log(
+      round(freeFlowPracticeMins / freeFlowPracticesCount),
+      "avg mins per free flow"
+    );
 
     // online classes
     // console.log();
