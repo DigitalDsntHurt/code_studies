@@ -54,5 +54,3 @@ file.each_line do |line|
 end
 
 p my_total_score
-
-# tst
