@@ -1,0 +1,32 @@
+priorities_sum = 0
+
+item_priorities = ('a'..'z').to_a + ('A'..'Z').to_a
+
+elf_groups = []
+current_group = []
+File.open('/Users/nick.smith/Desktop/code_studies/2022/advent_of_code/day3/day3.txt').each_line do |line|
+  if current_group.length > 2
+    elf_groups << current_group
+    current_group = []
+  end
+  current_group << line.gsub("\n", '')
+end
+
+elf_groups.each do |group|
+  group[0].each_char do |char|
+    if group[1].include?(char) && group[2].include?(char)
+      p char
+      p item_priorities.index(char) + 1
+      p group[0]
+      p group[1]
+      p group[2]
+      # priorities_sum += item_priorities.index(char) + 1
+      puts
+      break
+    end
+  end
+end
+
+puts '==== ===='
+p priorities_sum
+puts '==== ===='
