@@ -1,5 +1,11 @@
 # Apr 13, 2023
 
+## ideas
+.[] create a bash automation which copies text from a file into another file
+..[] use this for copying html_template content
+
+# Apr 12, 2023
+
 ## accomplished 
 - learned to use browserify to import node and yarn modules into .js files using `require('name_of_node_module');` syntax like in node.js
 
