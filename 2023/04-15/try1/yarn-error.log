@@ -1,0 +1,32 @@
+Arguments: 
+  /Users/nick.smith/.nvm/versions/node/v18.12.1/bin/node /Users/nick.smith/.nvm/versions/node/v18.12.1/bin/yarn add d3
+
+PATH: 
+  /Users/nick.smith/.rbenv/versions/3.2.1/bin:/opt/homebrew/Cellar/rbenv/1.2.0/libexec:/Users/nick.smith/.nvm/versions/node/v16.19.1/bin:/Users/nick.smith/.nvm/versions/node/v18.12.1/bin:/Users/nick.smith/.rbenv/shims:/Users/nick.smith/.rbenv/shims:/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/gusto/bin:/usr/local/munki
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+npm manifest: 
+  {
+    "name": "04-15",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
