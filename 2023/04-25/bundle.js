@@ -1,19 +1,27 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const d3 = require("d3");
+const colors = require("../../utils/colors");
+const math = require("../../utils/math");
 
 const canvas = d3.select('#canvas').append('svg').attr('width', 1500).attr('height', 900);
 
 
-const rand = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+// const rand = (min, max) => {
+//     min = Math.ceil(min);
+//     max = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
 
 const begin = () => {
-    const circle = canvas.append('circle').attr('r', rand(1,444)).attr('cx', rand(22,1414)).attr('cy', rand(8,888)).attr('fill', '#977073');
+    const circle = canvas.append('circle')
+        .attr('r', math.rand(1,444))
+        .attr('cx', math.rand(22,1414))
+        .attr('cy', math.rand(8,888))
+        .attr('fill', colors.rand());
     return circle;
 };
+
+// Here, we hard code the next transition
 
 // const grow = () => {
 //     circle
@@ -36,49 +44,35 @@ const begin = () => {
 //         .on('end', move);
 // };
 
+
+// Here, we select the next transition randomly
 const grow = () => {
     circle
-        .transition().duration(rand(3000, 8000)).delay(-50)
-        .attr('r', rand(1,900))
-        .on('end', steps[rand(0,2)]);
+        .transition().duration(math.rand(3000, 8000)).delay(-50)
+        .attr('r', math.rand(1,900))
+        .on('end', steps[math.rand(0,2)]);
 };
 
 const move = () => {
     circle
-        .transition().duration(rand(1, 5000)).delay(-50)
-        .attr('cx', rand(0, 1500)).attr('cy', rand(0,900))
-        .on('end', steps[rand(0,2)]);
+        .transition().duration(math.rand(1, 5000)).delay(-50)
+        .attr('cx', math.rand(0, 1500)).attr('cy', math.rand(0,900))
+        .on('end', steps[math.rand(0,2)]);
 };
 
 const shrink = () => {
     circle
-        .transition().duration(rand(1, 1500)).delay(-50)
-        .attr('r', rand(1,900))
-        .on('end', steps[rand(0,2)]);
+        .transition().duration(math.rand(1, 1500)).delay(-50)
+        .attr('r', math.rand(1,900))
+        .on('end', steps[math.rand(0,2)]);
 };
 
 const steps = [grow, move, shrink];
 
-// const randomNextStep = () => {
-//     // console.log(steps[rand(0,2)])
-//     return steps[rand(0,2)];
-// };
-
-// // // // // // // // 
-// // // // // // // // // // // // // // // // 
-// // // // // // // // 
-// // // // // // // // // // // // // // // // 
-// // // // // // // // 
-// // // // // // // // // // // // // // // // 
-// // // // // // // // 
-// // // // // // // // // // // // // // // // 
-// // // // // // // // 
-
 const circle = begin();
-steps[rand(0,2)]();
-// randomNextStep();
+steps[math.rand(0,2)]();
 
-},{"d3":558}],2:[function(require,module,exports){
+},{"../../utils/colors":567,"../../utils/math":568,"d3":558}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29823,4 +29817,70 @@ var _orient3d = require("./esm/orient3d.js");
 var _incircle = require("./esm/incircle.js");
 var _insphere = require("./esm/insphere.js");
 
-},{"./esm/incircle.js":561,"./esm/insphere.js":562,"./esm/orient2d.js":563,"./esm/orient3d.js":564}]},{},[1]);
+},{"./esm/incircle.js":561,"./esm/insphere.js":562,"./esm/orient2d.js":563,"./esm/orient3d.js":564}],567:[function(require,module,exports){
+const math = require("./math");
+
+const COLORS = [
+    "#152b61",
+    "#087474",
+    "#c91d07",
+    "#f00c51",
+    "#955bff",
+    "#206000",
+    "#efa009",
+    "#f7a9a9",
+    "#9e0b0b",
+    "#dddddd",
+    "#c6e2ff",
+    "#b0e0e6",
+    "#f7b268",
+    "#977073",
+    "#d76067",
+    "#981d26",
+    "#66545e",
+    "#a39193",
+    "#aa6f73",
+    "#eea990",
+    "#f6e0b5",
+    "#f7cac9",
+    "#dec2cb",
+    "#c5b9cd",
+    "#abb1cf",
+    "#92a8d1",
+    "#52bf90",
+    "#49ab81",
+    "#419873",
+    "#398564",
+    "#317256",
+    "#f98787",
+    "#e76a6a",
+    "#d65b5b",
+    "#c14b4b",
+    "#b83f3f",
+];
+
+const rand = () => {
+    return COLORS[math.rand(0,COLORS.length - 1)];
+};
+
+// console.log(randomColor());
+// console.log(randomColor());
+// console.log(randomColor());
+// console.log(randomColor());
+// console.log(randomColor());
+// console.log(randomColor());
+// console.log(randomColor());
+// console.log(randomColor());
+
+exports.rand = rand;
+
+},{"./math":568}],568:[function(require,module,exports){
+const rand = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+exports.rand = rand;
+
+},{}]},{},[1]);
