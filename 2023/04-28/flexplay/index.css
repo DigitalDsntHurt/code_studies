@@ -1,0 +1,32 @@
+#flow-container {
+    background-color: black;
+}
+
+.flow-cell {
+    background-color: #cccccc;
+    height: 22px;
+    width: 22px;
+}
+
+/*  */
+/*  */
+
+.spacer {
+    margin: 88px
+}
+
+/*  */
+/*  */
+
+#flex-container {
+    background-color: black;
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+}
+
+.flex-cell {
+    background-color: #cccccc;
+    height: 22px;
+    width: 22px;
+}
