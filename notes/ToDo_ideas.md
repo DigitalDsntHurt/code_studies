@@ -39,7 +39,7 @@ in a node app
 # automations
 .[] create a bash automation which copies text from a file into another file
 ..[] use this for copying html_template content
-.[] bash script to cd into today's dir in code studies repo
+.[x] bash script to cd into today's dir in code studies repo
 
 # frameworks
 .[] create a next.js app

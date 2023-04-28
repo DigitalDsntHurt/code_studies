@@ -1,4 +1,43 @@
 # Apr 27, 2023
+
+## automation work
+i wanted to update a current automation
+
+currently
+- `ruby bin/make_today_dir.rb`
+    - creates a new directory in `code_studies/2023` named today's date like `04-27`
+
+the new automation
+- updates the alfred `open code studies repo` workflow. now it
+    - cds code_studies repo
+    - opens it in vs code
+    - creates the today dir (like `04-27`) in the directory of the current year (instead of hard-coding 2023)
+    - cds into today's new dir
+    - clears terminal 
+    - lists out current directory's contents
+
+the tricky part here was, oddly enough, cd'ing into the today dir that either was just created or already exists
+- i was unable to do this from a ruby script because cd commands either using `system()` or using `Dir.` only work within the script's session, not for the external terminal windown we're working in
+- i was unable to do this from alfred because i could not dynamically generate a today's date and pass it into any of the automation arguments
+
+i ended up figuing out how to do this via fish's `config.fish`
+
+```
+set todays_code_study_dir_name (date +"%Y/%m-%d")
+function go_to_todays_code_study_dir
+  cd "/Users/nick.smith/grapespace/skillsdev/code_studies/"$todays_code_study_dir_name
+end
+```
+
+the above sets a fish var called `todays_code_study_dir_name`
+- `date` gives us today's date
+- `+"%Y/%m-%d"` formats it to eg `04-27`
+
+then the function called go_to_todays_code_study_dir appends the formatted date to the path the code studies repo and cds into it
+
+adding `go_to_todays_code_study_dir` to the alfred `open code studies repo` terminal workflow did the trick
+
+## code study / a life in weeks work
 used create react app to create and run a react app
 created a Week component to serve as a container for Day components
 created a Day component to serve as a visible square
@@ -25,7 +64,6 @@ the way to do it is
             }
         );
     }
-
 ```
 
 # Apr 26, 2023
