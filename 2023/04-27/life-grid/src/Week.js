@@ -1,13 +1,16 @@
 import React from 'react';
-// import './Week.css';
+import './Week.css';
 import Day from './Day';
 
-const Week = ({days}) => {
+const Week = ({ days }) => {
+    console.log(days)
     return (
-        <div className="Week">
-            {days.map((day, i) => {
-                return <Day key={i} />
-            })}
+        <div className="life">
+            {
+                days.map((w, i) => (
+                    <div className="Week" />
+                ))
+            }
         </div>
     );
 };
