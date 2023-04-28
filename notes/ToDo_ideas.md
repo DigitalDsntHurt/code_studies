@@ -15,6 +15,9 @@
 
 .[] complete this tutorial on using d3 within react apps : https://www.freecodecamp.org/news/how-to-get-started-with-d3-and-react-c7da74a5bd9f/
 
+# basics drawing to the dom
+.[] what's the most bullet-proof possible way to draw shapes that don't change size or shape given contents or other variables?
+
 # working with dates
 
 mental fuzziness over how mutable vs immutable my date objects are using xdate
@@ -43,3 +46,8 @@ in a node app
 
 # frameworks
 .[] create a next.js app
+
+# react
+.[] how does create-react-app work?
+..[] how / where is webpack configured?
+..[] how / where is babel configured?

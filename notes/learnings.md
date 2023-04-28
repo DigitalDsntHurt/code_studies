@@ -1,3 +1,15 @@
+# Apr 28, 2023
+
+## drawing a grid with react
+- continued reps just getting the hang of the react boilerplate
+- continued to forget to import the css files into the components -- remember to do this 
+- flex works super nicely for this purpose
+
+## flex / grid spacing
+Learned the absolute bare minimum basics of the flex layout pattern with this very nice link : https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/
+
+flex excells at dynamic ui layouts that rely on ordered vertical and horizontal lists of elements
+
 # Apr 27, 2023
 
 ## automation work
