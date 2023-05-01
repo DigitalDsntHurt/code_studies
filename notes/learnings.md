@@ -1,3 +1,15 @@
+# May 1, 2023
+
+the idea was to draw some elements to the dom in a way that evokes footsteps
+- i got stuck on svg stuff -- svg was getting drawn to the dom according to dev tools but i wasn't able to make them visible
+- i pivoted to using regular divs, which showed up visibly but are a pain to work with in terms of a coordinate system
+-- aboslute positioning seems to work in terms of the overall dom window
+-- relative positioning at first seemed to be the thing i was looking for, namely to position elements relative to their parent container's boundaries. but then once i started looping steps, all the properties were being set as i expected and yet the step divs weren't being drawn in the straight line i expected
+
+- i was also unsuccessful at using setTimeout to animate each subsequent step
+- i was also unsuccessful at importing my colors helper / forgot how to do this and did not take the time to remember
+
+
 # Apr 28, 2023
 
 ## drawing a grid with react
