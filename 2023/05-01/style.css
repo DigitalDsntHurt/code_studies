@@ -1,0 +1,11 @@
+.another-canvas {
+    width: 444px;
+    height: 444px;
+    background-color: rosybrown;
+}
+
+.step {
+    width: 8px;
+    height: 2px;
+    background-color: brown;
+}
