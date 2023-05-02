@@ -15,6 +15,12 @@
 
 .[] complete this tutorial on using d3 within react apps : https://www.freecodecamp.org/news/how-to-get-started-with-d3-and-react-c7da74a5bd9f/
 
+.[] study this tutorial https://observablehq.com/@onoratod/animate-a-path-in-d3
+..[] in depth : how does `stroke-dashoffset` work?
+..[] in depth : how does `stroke-dasharray` work?
+.. ..[] how does `stroke-dasharray`'s dash size property work?
+.. ..[] how does `stroke-dasharray`'s gap size property work?
+
 # basics drawing to the dom
 .[] what's the most bullet-proof possible way to draw shapes that don't change size or shape given contents or other variables?
 

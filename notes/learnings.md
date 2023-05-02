@@ -1,3 +1,12 @@
+# May 2, 2023
+
+Used this excellent tutorial https://observablehq.com/@onoratod/animate-a-path-in-d3 to learn how to animate paths in d3
+the technique works like this
+- define a path
+- get the length of the path
+- use that length to alter the `stroke-dashoffset`, which simulates the 'pulling' of the line from start to end
+amazing. 
+
 # May 1, 2023
 
 the idea was to draw some elements to the dom in a way that evokes footsteps
