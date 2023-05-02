@@ -30,5 +30,5 @@ horizontalLine
     .attr('stroke-dashoffset', horizontalLength)
     .transition()
     .attr('stroke-dashoffset', 0)
-    .delay(3300)
-    .duration(2000)
+    .delay(800)
+    .duration(4000)

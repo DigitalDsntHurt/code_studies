@@ -1,4 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+// Figured out how to do this from this https://observablehq.com/@onoratod/animate-a-path-in-d3
+// excellent tutorial
+
 const d3 = require("d3");
 
 const canvas = d3.select('#canvas').append('svg').attr('width', 800).attr('height', 800);
@@ -28,8 +31,8 @@ horizontalLine
     .attr('stroke-dashoffset', horizontalLength)
     .transition()
     .attr('stroke-dashoffset', 0)
-    .delay(3300)
-    .duration(2000)
+    .delay(800)
+    .duration(4000)
 
 },{"d3":558}],2:[function(require,module,exports){
 "use strict";
