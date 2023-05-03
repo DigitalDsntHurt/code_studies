@@ -46,8 +46,8 @@ in a node app
 .[] what are the tradeoffs of all the above approaches?
 
 # automations
-.[] create a bash automation which copies text from a file into another file
-..[] use this for copying html_template content
+.[x] create a bash automation which copies text from a file into another file
+..[x] use this for copying html_template content
 .[x] bash script to cd into today's dir in code studies repo
 
 # frameworks
