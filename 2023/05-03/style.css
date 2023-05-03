@@ -1,0 +1,18 @@
+.year {
+    /* display: block; */
+    /* margin: 22px; */
+}
+
+.week {
+    display: flex;
+    /* column-gap: 4px;
+    row-gap: 4px; */
+    /* gap: 22px; */
+}   
+
+.day {
+    background-color: darkcyan;
+    width: 4px;
+    height: 4px;
+    margin: 2px;
+}
