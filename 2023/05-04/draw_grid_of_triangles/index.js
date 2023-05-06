@@ -23,4 +23,9 @@ const weeksData = [
 ];
 
 // the below is WIP and does not work
-canvas.data(weeksData).enter(d => drawTriangle());
+// canvas.data(weeksData).enter(d => drawTriangle());
+
+// make a selection
+    // bind selection to data
+    // set what happend on entry of the data
+    // append something to the dom for each 
