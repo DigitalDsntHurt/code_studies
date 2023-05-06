@@ -1,3 +1,8 @@
+# May 6, 2023
+Today's learning is about deliberate practice. 
+Today i did something slightly too easy... it didn't push me, wasn't as fun and i learned less. 
+
+
 # May 2, 2023
 
 Used this excellent tutorial https://observablehq.com/@onoratod/animate-a-path-in-d3 to learn how to animate paths in d3
