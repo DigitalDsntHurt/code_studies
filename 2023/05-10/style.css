@@ -1,0 +1,11 @@
+.divvee {
+    width: 66px;
+    height: 28px;
+    background-color: midnightblue;
+}
+
+.actual-div {
+    width: 33px;
+    height: 8px;
+    background-color: brown;
+}
