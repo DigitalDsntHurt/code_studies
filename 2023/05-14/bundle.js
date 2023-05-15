@@ -2,106 +2,62 @@
 const d3 = require("d3");
 const math = require('../../utils/math');
 
-const canvasWidth = 999;
-const canvasHeight = 444;
-const canvas = d3.select('#canvas').append('svg').attr('width',canvasWidth).attr('height',canvasHeight);
+const canvas = d3.select('#canvas').append('svg').attr('width',800).attr('height',400);
 
-// 
-// // draw a straight vertical reed
-// // 
-// const reedRootX = math.rand(4,canvasWidth - 4);
-// const reedRootY = canvasHeight;
-// const reedRoot = `M${reedRootX},${reedRootY}`;
-
-// const reedTipX = reedRootX;
-// const reedTipY = math.rand(2,111);
-// const reedTip = `L${reedTipX},${reedTipY}`;
-
-// const reed = canvas.append('path')
-//     .attr('fill','none').attr('stroke','gold')
-//     .attr('d', `${reedRoot} ${reedTip}`)
-
-// 
-// // draw a straight non-vertical reed
-//
-// const reedRootX = math.rand(4,canvasWidth - 4);
-// const reedRootY = canvasHeight;
-// const reedRoot = `M${reedRootX},${reedRootY}`;
-
-// const reedTipX = math.plusOrMinusN(reedRootX,math.rand(0,22/100*reedRootX));
-// const reedTipY = math.rand(2,111);
-// const reedTip = `L${reedTipX},${reedTipY}`;
-
-// const reed = canvas.append('path')
-//     .attr('fill','none').attr('stroke','gold')
-//     .attr('d', `${reedRoot} ${reedTip}`)
-
-
-// 
-// // draw a curved reed
-//
-// const reedRootX = math.rand(4,canvasWidth - 4);
-// const reedRootY = canvasHeight;
-// const reedRoot = `${reedRootX},${reedRootY}`;
-
-// const reedTipX = math.plusOrMinusN(reedRootX,math.rand(0,22/100*reedRootX));
-// const reedTipY = math.rand(2,111);
-// const reedTip = `${reedTipX},${reedTipY}`;
-
-// const controlPoint1X = reedRootX + math.rand(8,88);
-// const controlPoint1Y = math.rand(canvasHeight / 2, canvasHeight);
-// const controlPoint1 = `${controlPoint1X} ${controlPoint1Y}`;
-
-// const controlPoint2X = reedTipX - math.rand(8,88);
-// const controlPoint2Y = math.rand(0, canvasHeight / 4);
-// const controlPoint2 = `${controlPoint2X} ${controlPoint2Y}`;
-
-// const reed = canvas.append('path')
-//     .attr('fill','none').attr('stroke','gold')
-//     .attr('d', `M${reedRoot} C${controlPoint1},${controlPoint2},${reedTip}`)
-
-
-// 
-// // draw a curved reed that sways
-//
-const reedRootX = math.rand(4,canvasWidth - 4);
-const reedRootY = canvasHeight;
-const reedRoot = `${reedRootX},${reedRootY}`;
-
-const reedTipX = math.plusOrMinusN(reedRootX,math.rand(0,22/100*reedRootX));
-const reedTipY = math.rand(2,111);
-const reedTip = `${reedTipX},${reedTipY}`;
-
-const controlPoint1X = reedRootX + math.rand(8,88);
-const controlPoint1Y = math.rand(canvasHeight / 2, canvasHeight);
-const generateControlPoint1 = (x,y) => {
-    return `${x} ${y}`
+const drawPath = (sp, cp1, cp2, ep) => {
+    return `M${sp} C ${cp1}, ${cp2}, ${ep}`
 };
-const controlPoint1 = generateControlPoint1(controlPoint1X, controlPoint1Y);
 
-const controlPoint2X = reedTipX - math.rand(8,88);
-const controlPoint2Y = math.rand(0, canvasHeight / 4);
+const assembleControlPoint = (x,y) => {
+    return `${x} ${y}`;
+}
+
+let startPointX = math.rand(8,792);
+const startPointY = 400;
+const startPoint = `${startPointX},${startPointY}`;
+console.log('startPoint : ', startPoint);
+
+const controlPoint1X = math.plusOrMinusN(startPointX,math.rand(22,88));
+const controlPoint1Y = 200;
+const controlPoint1 = assembleControlPoint(controlPoint1X, controlPoint1Y);
+console.log('controlPoint1 : ', controlPoint1);
+
+const controlPoint2X = startPointX - Math.abs(controlPoint1X - startPointX);
+const controlPoint2Y = 200;
 const controlPoint2 = `${controlPoint2X} ${controlPoint2Y}`;
+console.log('controlPoint2 : ', controlPoint2);
 
-const reed = canvas.append('path')
-    .attr('fill','none').attr('stroke','#B59410')
-    .attr('d', `M${reedRoot} C${controlPoint1},${controlPoint2},${reedTip}`)
+const endPointX = startPointX;
+const endPointY = 8;
+const endPoint = `${endPointX} ${endPointY}`
+console.log('endPoint : ', endPoint);
 
-const swayReed = () => {
-    const newReedTip = `${math.plusOrMinusN(reedTipX,22)},${math.plusOrMinusN(reedTipY,8)}`;
+// const reed = canvas.append('path')
+//     .attr('stroke','brown').attr('fill','none')
+//     .attr('d', drawPath(startPoint, controlPoint1, controlPoint2, endPoint));
 
-    const newControlPoint1X = math.plusOrMinusN(controlPoint1X,math.rand(2,44));
-    const newControlPoint1Y = math.plusOrMinusN(controlPoint1Y,math.rand(2,11));
-    const newControlPoint1 = generateControlPoint1(newControlPoint1X,newControlPoint1Y);
-
-    // const newControlPoint2 = ;
-
-    reed.transition().duration(math.rand(1800,4400))
-        .attr('d', `M${reedRoot} C${newControlPoint1},${controlPoint2},${newReedTip}`)
-        .on('end', swayReed)
+const drawReed = () => {
+    const reed = canvas.append('path')
+        .attr('stroke','brown').attr('fill','none')
+        .attr('d', drawPath(startPoint, controlPoint1, controlPoint2, endPoint));
+    return reed;
 };
 
-swayReed();
+const wave = (node) => {
+    node.transition().duration(1800).ease((t) => d3.easeBackInOut(t))
+    .attr('d', drawPath(startPoint, assembleControlPoint(math.plusOrMinusN(controlPoint1X,math.rand(0,88)),200), assembleControlPoint(math.plusOrMinusN(controlPoint2X,math.rand(0,88)),200), endPoint))
+    .on('end', () => wave(node))
+};
+
+// wave(reed);
+
+while (startPointX < 800) {
+    const reed = drawReed();
+    wave(reed);
+    startPointX += math.rand(2,8);
+}
+
+
 },{"../../utils/math":567,"d3":558}],2:[function(require,module,exports){
 "use strict";
 

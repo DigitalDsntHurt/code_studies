@@ -7,7 +7,7 @@ const canvas = d3.select('#canvas').append('svg').attr('width',canvasWidth).attr
 
 // 
 // // draw a straight vertical reed
-// 
+// // 
 // const reedRootX = math.rand(4,canvasWidth - 4);
 // const reedRootY = canvasHeight;
 // const reedRoot = `M${reedRootX},${reedRootY}`;
