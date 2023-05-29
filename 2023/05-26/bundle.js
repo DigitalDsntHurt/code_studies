@@ -17,7 +17,27 @@ const drawThing = () => {
     return circ;
 };
 
-drawThing();
+const plusOrMinus = 1;
+const animateThing = (thing) => {
+    console.log(thing);
+    const thingCoords = thing._groups[0][0].attributes[1].value;
+    // console.log(thingCoords);
+
+    thing.transition()
+        .delay(0)
+        .duration(2000)
+        .attr('cx', thingCoords + (222 * plusOrMinus))
+        .on('end', () => {
+            animateThing(thing);
+            console.log(plusOrMinus);
+            plusOrMinus * -1;
+            console.log(plusOrMinus);
+        })
+};
+
+const circle = drawThing();
+animateThing(circle);
+
 },{"../../utils/colors":567,"../../utils/math":568,"d3":558}],2:[function(require,module,exports){
 "use strict";
 
