@@ -1,6 +1,6 @@
 import './App.css';
-import lifeDays from './lifeData';
-import Week from './Week';
+import { lifeMonths } from './lifeData';
+import Month from './Month';
 
 function App() {
   return (
@@ -8,8 +8,8 @@ function App() {
       <header className="App-header">
         <h1>hiii</h1>
         {
-          lifeDays.map(week => {
-            return <Week days={week} />
+          lifeMonths.map(month => {
+            return <Month weeks={month} />
           })
         }
       </header>

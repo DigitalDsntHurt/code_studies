@@ -1,4 +1,4 @@
-const lifeDays = [
+const lifeWeeks = [
     ['mon','tue','wed','thu','fri','sat','sun'],
     ['mon','tue','wed','thu','fri','sat','sun'],
     ['mon','tue','wed','thu','fri','sat','sun'],
@@ -8,4 +8,28 @@ const lifeDays = [
     ['mon','tue','wed','thu','fri','sat','sun'],
 ];
 
-export default lifeDays;
+const lifeMonths = [
+    [
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+    ],
+    [
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+    ],
+    [
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+        ['mon','tue','wed','thu','fri','sat','sun'],
+    ],
+];
+
+export {
+    lifeMonths,
+    lifeWeeks,
+};
