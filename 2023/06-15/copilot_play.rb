@@ -17,7 +17,7 @@ def get_monday(date)
   date - date.wday + 1
 end
 
-p get_monday(Date.today)
+# p get_monday(Date.today)
 
 # what does ruby's date.wday method do?
 # ruby's date.wday method returns the day of the week as an integer, where sunday is 0 and saturday is 6
@@ -26,3 +26,18 @@ p get_monday(Date.today)
 # const getMonday = (date) => { 
 #   date.setDate(date.getDate() - date.getDay() + 1)
 # }
+
+# method accepts a date and a desired age in years 
+# method returns an array of all the weeks between the date and the date when the person will reach the desired age
+def generate_life_weeks(date, age)
+  weeks = []
+  age_in_days = age * 365
+  age_in_days.times do |i|
+    weeks << get_monday(date + i)
+  end
+  weeks
+end
+
+birth_date = Date.new(1990, 4, 8)
+p birth_date
+p generate_life_weeks(birth_date, 90)
