@@ -39,5 +39,29 @@ def generate_life_weeks(date, age)
 end
 
 birth_date = Date.new(1990, 4, 8)
-p birth_date
-p generate_life_weeks(birth_date, 90)
+# p birth_date
+# p generate_life_weeks(birth_date, 90)
+
+## second try
+
+# method accepts a date and a desired age in years
+# method calculates a death date by adding desired age to the date
+# method returns an array of arrays, where each subarray is a week of the person's life
+def generate_life_weeks(date, age)
+  death_date = date + age * 365
+  weeks = []
+  while date < death_date
+    weeks << get_monday(date)
+    date += 7
+  end
+  weeks
+end
+
+payload = generate_life_weeks(birth_date, 90)
+p payload.length
+puts
+p payload.first
+puts
+p payload.sample
+puts
+p payload.last
