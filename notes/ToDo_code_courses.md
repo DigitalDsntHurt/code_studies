@@ -9,3 +9,41 @@
 .[] https://nira.com/github-copilot/#:~:text=To%20get%20the%20most%20out,Copilot%20to%20understand%20your%20internet.
 
 ## openAI
+
+.[] https://platform.openai.com/docs/quickstart
+.[] https://www.steamship.com/
+
+# ideas for being a great eng learner at Gusto
+
+.[] read entier eng blog -- https://engineering.gusto.com/
+.[] complete all grow with gusto followed paths -- https://degreed.com/profile/dguser4xe0eo7/pathways
+.[] complete all grow this gusto saved content -- https://degreed.com/profile/dguser4xe0eo7/saved
+.[] catch up on all of kevin lawver's mindfull on-call content -- https://drive.google.com/drive/folders/1KY3OV1UktsEbKk8f0FDJETgzCwu5v-HE
+.[] consume ALL graphql guild content -- https://drive.google.com/drive/folders/1X58CEes7A0zpcJWvyu9SI7vUoYd_mJso
+.[] consume ALL perf guild content
+.[] consume ALL modularity guild content
+.[] consume ALL ruby guild content
+.[] consume ALL testing guild content -- https://confluence.gustocorp.com/display/ENGTEST/Testing+Guild+Home -- https://drive.google.com/drive/u/0/folders/0AHg6l6ow5dHyUk9PVA
+.[] consume ALL front-end guild content -- https://drive.google.com/drive/u/0/folders/0AO49FwABlcsRUk9PVA
+
+# dev books i'd like to complete
+
+.[] rebuilding rails : https://rebuilding-rails.com/
+.[] 99 bottles of oop
+
+# dev courses i'd like to complete
+
+.[] learn enough suite : https://www.learnenough.com/courses
+.[] https://ruby-doc.com/docs/ProgrammingRuby/
+
+## data viz
+
+- [x] https://frontendmasters.com/courses/data-visualization/
+- [] https://frontendmasters.com/courses/d3/
+- [] https://frontendmasters.com/courses/d3-js-custom-charts/
+- [] https://frontendmasters.com/courses/d3-js-react/
+
+## vs code
+
+- [] https://frontendmasters.com/courses/visual-studio-code/
+- [] https://frontendmasters.com/courses/customize-vs-code/
