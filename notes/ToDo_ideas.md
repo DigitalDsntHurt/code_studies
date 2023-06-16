@@ -62,6 +62,11 @@ in a node app
 ..[x] use this for copying html_template content
 .[x] bash script to cd into today's dir in code studies repo
 
+## enhancements to portofioli
+
+.[] setup the recursive open to work at deeper nested file path levels
+.[] go through an anywhere where the output is a console log, write it to the dom
+
 # frameworks
 
 .[] create a next.js app
