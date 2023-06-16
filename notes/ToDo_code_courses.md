@@ -17,7 +17,7 @@
 .[] https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/
 .[] https://platform.openai.com/docs/introduction/key-concepts
 .[] https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/
-.[]
+.[] https://www.pinecone.io/learn/
 
 # ideas for being a great eng learner at Gusto
 
