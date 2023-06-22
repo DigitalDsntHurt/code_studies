@@ -1,7 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const d3 = require("d3");
-const colors = require('../../utils/colors');
-const math = require('../../utils/math');
+const colors = require('../../../utils/colors');
+const math = require('../../../utils/math');
 
 const canvas = d3.select("#canvas").append("svg").attr("width", 500).attr("height", 500);
 // const triangle = canvas.append("path").attr("d", "M 100 350 L 250 100 L 400 350 Z").attr("fill", "none").attr("stroke", "blue").attr("stroke-width", 10);
@@ -10,7 +10,7 @@ const canvas = d3.select("#canvas").append("svg").attr("width", 500).attr("heigh
 const rectangle = canvas.append('rect').attr('fill', colors.rand()).attr('x', 200).attr('y', 200).attr('width', 222).attr('height', 75);
 const triangle = canvas.append('path').attr('fill', colors.rand()).attr('d', 'M 200 200 L 150 275 H 250 Z');
 triangle.transition().duration(math.rand(4444,8888)).attr('transform', `translate(${math.rand(178,222)}, 0)`)
-},{"../../utils/colors":567,"../../utils/math":568,"d3":558}],2:[function(require,module,exports){
+},{"../../../utils/colors":567,"../../../utils/math":568,"d3":558}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

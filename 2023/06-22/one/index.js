@@ -1,6 +1,6 @@
 const d3 = require("d3");
-const colors = require('../../utils/colors');
-const math = require('../../utils/math');
+const colors = require('../../../utils/colors');
+const math = require('../../../utils/math');
 
 const canvas = d3.select("#canvas").append("svg").attr("width", 500).attr("height", 500);
 // const triangle = canvas.append("path").attr("d", "M 100 350 L 250 100 L 400 350 Z").attr("fill", "none").attr("stroke", "blue").attr("stroke-width", 10);

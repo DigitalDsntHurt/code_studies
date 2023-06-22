@@ -62,6 +62,14 @@ in a node app
 ..[x] use this for copying html_template content
 .[x] bash script to cd into today's dir in code studies repo
 
+.[] create an "iterate" command
+
+- in the current working directory
+- determine the correct iteration number (like 1, 2, 3, etc)
+- create a new directory with that iteration number
+- move all the relevant files (usually node modules, bundle.js, index.html, index.js, package.json, yarn.lock) into that new directory
+- should be able to update relative imports to work
+
 ## enhancements to portofioli
 
 .[] setup the recursive open to work at deeper nested file path levels
