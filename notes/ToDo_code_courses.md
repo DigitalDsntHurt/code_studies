@@ -54,3 +54,8 @@
 
 - [] https://frontendmasters.com/courses/visual-studio-code/
 - [] https://frontendmasters.com/courses/customize-vs-code/
+
+## misc
+
+.[] https://www.executeprogram.com/courses
+.[] build a compiler from scratch : https://destroyallsoftware.s3.amazonaws.com/das-0101-a-compiler-from-scratch-4k.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIKRVCECXBC4ZGHIQ/20230418/us-east-1/s3/aws4_request&X-Amz-Date=20230418T214527Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=1904084f1df2db24db39c46c5f3cbb2b31330c96882d27e5352e9f02e28809cf
