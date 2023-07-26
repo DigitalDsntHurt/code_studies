@@ -40,6 +40,7 @@
 
 # dev courses i'd like to complete
 
+.[] https://www.algoexpert.io/product
 .[] learn enough suite : https://www.learnenough.com/courses
 .[] https://ruby-doc.com/docs/ProgrammingRuby/
 
